@@ -1,3 +1,13 @@
+# CS 361 specific
+
+To deploy the app, you need to have both this repository and https://github.com/kylstraj/
+kylstraj.github.io.git on your machine. Run `npm run build`. Then copy the contents of
+the build to the kylstraj.github.io with `cp -R build/* <path/to/kylstraj.github.io>`. Once
+you've copied the build over, commit and push to master in the kylstraj.github.io repo.
+You can then access the deployed site at https://kylstraj.github.io.
+
+# Other
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
