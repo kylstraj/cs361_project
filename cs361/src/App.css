@@ -43,3 +43,24 @@ nav a {
   text-decoration: none;
   margin: 0 2em;
 }
+
+.month-container {
+  padding: 1em;
+}
+
+.month-container h2 {
+  text-align: center;
+}
+
+.month-grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.month-cell {
+  min-height: 120px;
+  min-width: 160px;
+  box-sizing: border-box;
+  border: solid 1px black;
+}
+
