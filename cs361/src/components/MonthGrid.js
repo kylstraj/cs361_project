@@ -73,20 +73,22 @@ const MonthGrid = ({
   month,
   year,
 }) => (
-  <table className="month-grid">
-    <thead>
-      <th>Sunday</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-      <th>Saturday</th>
-    </thead>
-    <tbody>
-      {renderGrid(month, year)}
-    </tbody>
-  </table>
+  <div className="month-grid-container">
+    <table className="month-grid">
+      <thead>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+      </thead>
+      <tbody>
+        {renderGrid(month, year)}
+      </tbody>
+    </table>
+  </div>
 );
 
 MonthGrid.propTypes = {

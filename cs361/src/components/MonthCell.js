@@ -8,7 +8,7 @@ const MonthCell = ({
   empty,
 }) => (
   empty ?
-    <div className="month-cell" /> :
+    <div /> :
     (
       <div className="month-cell">
         {date}

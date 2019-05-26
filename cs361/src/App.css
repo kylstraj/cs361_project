@@ -45,11 +45,16 @@ nav a {
 }
 
 .month-container {
-  padding: 3em;
+  padding: 1em;
 }
 
 .month-container h2 {
   text-align: center;
+}
+
+.month-grid-container {
+  display: flex;
+  justify-content: center;
 }
 
 .month-cell {
