@@ -11,7 +11,12 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" render={() => <div>Home</div>} />
-        <Route path="/month" component={Month} />
+        <Route
+          path="/month/:month/:year"
+          render={({match}) => (
+            <Month {...match.params} />
+          )}
+        />
         <Route path="/week" render={() => <div>Weekly view</div>} />
       </Switch>
     </BrowserRouter>
