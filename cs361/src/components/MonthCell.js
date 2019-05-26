@@ -5,14 +5,22 @@ const MonthCell = ({
   date,
   month,
   year,
+  empty,
 }) => (
-  <div>{month} {date}, {year}</div>
+  empty ?
+    <div className="month-cell" /> :
+    (
+      <div className="month-cell">
+        {date}
+      </div>
+    )
 );
 
 MonthCell.propTypes = {
   date: PropTypes.number,
   month: PropTypes.string,
   year: PropTypes.string,
+  empty: PropTypes.bool,
 };
 
 export default MonthCell;

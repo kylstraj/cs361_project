@@ -39,6 +39,7 @@ const getDatesInWeek = (month, year, week) => {
 
 const renderWeek = (month, year, week) => {
   const datesInWeek = getDatesInWeek(month, year, week);
+  const { numDays } = monthInfo(month, year);
   return (
     <tr key={`${month}-${week}`}>
       {daysByIndex.map(day => (
@@ -47,6 +48,7 @@ const renderWeek = (month, year, week) => {
             date={datesInWeek[day]}
             month={month}
             year={year}
+            empty={datesInWeek[day] < 1 || datesInWeek[day] > numDays}
           />
         </td>
       ))
