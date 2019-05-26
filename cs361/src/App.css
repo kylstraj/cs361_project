@@ -31,3 +31,15 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  display: flex;
+  padding: 2em;
+  background-color: blue;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 2em;
+}
