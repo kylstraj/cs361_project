@@ -43,3 +43,11 @@ nav a {
   text-decoration: none;
   margin: 0 2em;
 }
+
+.month-container {
+  padding: 3em;
+}
+
+.month-container h2 {
+  text-align: center;
+}
