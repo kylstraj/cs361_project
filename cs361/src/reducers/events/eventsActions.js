@@ -10,7 +10,7 @@ export const removeEvent = eventId => ({
   eventId,
 });
 
-export const updateVent = (eventId, update) => ({
+export const updateEvent = (eventId, update) => ({
   type: UPDATE_EVENT,
   eventId,
   update,
