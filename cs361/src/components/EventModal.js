@@ -19,7 +19,7 @@ const EventModal = ({ close, remove, event: { title, date, location, startTime, 
     <div>start: {formatTime(startTime)}</div>
     <div>end: {formatTime(endTime)}</div>
     <button onClick={close}>Close</button>
-    <button onCLick={remove}>Remove</button>
+    <button onClick={remove}>Remove</button>
   </div>
 );
 

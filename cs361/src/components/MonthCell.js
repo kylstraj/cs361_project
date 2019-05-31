@@ -15,7 +15,6 @@ const getEventsOnDate = (events, day, month, year) => Object.values(events)
     day === d && month === m && year === y);
 
 
-
 const Event = ({
   title,
   onClick,
