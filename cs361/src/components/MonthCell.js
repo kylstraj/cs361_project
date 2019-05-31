@@ -2,18 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { setDisplayedEvent } from '../reducers/events/eventsActions';
+
 const mapStateToProps = state => ({
   events: state.events.events,
 });
+
+const mapDispatchToProps = { setDisplayedEvent };
 
 const getEventsOnDate = (events, day, month, year) => Object.values(events)
   .filter(({ date: { day: d, month: m, year: y }}) =>
     day === d && month === m && year === y);
 
+
+
 const Event = ({
   title,
+  onClick,
 }) => (
-  <div className="event">
+  <div className="event" onClick={onClick}>
     { title } 
   </div>
 );
@@ -24,6 +31,7 @@ const MonthCellComponent = ({
   year,
   empty,
   events,
+  setDisplayedEvent,
 }) => {
   const eventsOnDate = getEventsOnDate(events, date, month, year);
   console.log(eventsOnDate);
@@ -33,7 +41,7 @@ const MonthCellComponent = ({
       <div className="month-cell">
         {date}
         { eventsOnDate.map(event => (
-          <Event title={event.title} />
+          <Event title={event.title} onClick={() => setDisplayedEvent(event)} />
         ))}
       </div>
     )
@@ -47,4 +55,4 @@ MonthCellComponent.propTypes = {
 };
 
 export { MonthCellComponent };
-export default connect(mapStateToProps)(MonthCellComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(MonthCellComponent);
