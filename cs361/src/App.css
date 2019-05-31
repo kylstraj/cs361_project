@@ -64,3 +64,13 @@ nav a {
   border: solid 1px black;
 }
 
+.event {
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  background-color: blue;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
