@@ -17,6 +17,7 @@ const events = [
     title: 'Do cs361 assignment',
     location: 'Chicago',
     date: {
+      year: '2019',
       month: June,
       day: 2,
     },
@@ -34,6 +35,7 @@ const events = [
     title: 'Group meeting',
     location: 'google hangouts',
     date: {
+      year: '2019',
       month: June,
       day: 2,
     },
@@ -51,6 +53,7 @@ const events = [
     title: 'Exam',
     location: 'ProctorU',
     date: {
+      year: '2019',
       month: June,
       day: 9,
     },
