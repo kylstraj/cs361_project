@@ -1,7 +1,8 @@
 import React from 'react';
+import moment from 'moment';
 import { Modal } from 'react-bootstrap';
 
-const formatTime = ({ hour, minute }) => `${hour}:${minute}`;
+const formatTime = ({ hour, minute }) => moment(`${hour}${minute}`, 'HHmm').format('h:mm a');
 
 const EventModal = ({ close, remove, event: { title, date, location, startTime, endTime }}) => (
   <Modal show>
