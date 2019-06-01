@@ -5,7 +5,7 @@ import { Modal } from 'react-bootstrap';
 const formatTime = ({ hour, minute }) => moment(`${hour}${minute}`, 'HHmm').format('h:mm a');
 
 const EventModal = ({ close, remove, event: { title, date, location, startTime, endTime }}) => (
-  <Modal show>
+  <Modal show onHide={close}>
     <Modal.Header>
       <Modal.Title>{title}</Modal.Title>
     </Modal.Header>
