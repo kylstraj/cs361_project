@@ -22,12 +22,14 @@ const events = [
       day: 2,
     },
     startTime: {
-      hour: 18,
-      minute: 0,
+      hour: "6",
+      minute: "12",
+      AMPM: "PM",
     },
     endTime: {
-      hour: 20,
-      minute: 0,
+      hour: "10",
+      minute: "00",
+      AMPM: "AM",
     },
   },
   {
@@ -40,12 +42,14 @@ const events = [
       day: 2,
     },
     startTime: {
-      hour: 20,
-      minute: 0,
+      hour: "8",
+      minute: "12",
+      AMPM: "PM",
     },
     endTime: {
-      hour: 20,
-      minute: 30,
+      hour: "10",
+      minute: "00",
+      AMPM: "AM",
     },
   },
   {
@@ -58,12 +62,14 @@ const events = [
       day: 9,
     },
     startTime: {
-      hour: 12,
-      minute: 30,
+      hour: "6",
+      minute: "12",
+      AMPM: "PM",
     },
     endTime: {
-      hour: 13,
-      minute: 30,
+      hour: "10",
+      minute: "00",
+      AMPM: "AM",
     },
   },
 ];
@@ -87,7 +93,7 @@ class AppComponent extends React.Component {
           <Route exact path="/" render={() => <div>Home</div>} />
           <Route
             path="/month/:month/:year"
-            render={({match}) => (
+            render={({ match }) => (
               <Month {...match.params} />
             )}
           />

@@ -1,25 +1,27 @@
 import React from 'react';
 
-const formatTime = ({ hour, minute }) => `${hour}:${minute}`;
+const formatTime = ({ hour, minute, AMPM }) => `${hour}:${minute} ${AMPM}`;
 
 const EventModal = ({ close, remove, event: { title, date, location, startTime, endTime }}) => (
-  <div
+  <div className="modal"
     style={{
       position: 'absolute',
-      top: '50px',
-      left: '50px',
-      width: '80%',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '400px',
       border: 'solid 1px black',
+      backgroundColor: 'white',
       zIndex: '1000',
     }}
   >
     <h3>{title}</h3>
     <div>{date.month} {date.day}, {date.year}</div>
-    <div>location: {location}</div>
-    <div>start: {formatTime(startTime)}</div>
-    <div>end: {formatTime(endTime)}</div>
-    <button onClick={close}>Close</button>
-    <button onClick={remove}>Remove</button>
+    <div>Location: {location}</div>
+    <div>Start: {formatTime(startTime)}</div>
+    <div>End: {formatTime(endTime)}</div>
+    <button id="closeBtn" onClick={close}>Close</button>
+    <button id="removeBtn" onClick={remove}>Remove</button>
   </div>
 );
 

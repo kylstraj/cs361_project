@@ -45,6 +45,7 @@ nav a {
 }
 
 .month-container {
+  text-align: center;
   padding: 1em;
 }
 
@@ -73,4 +74,12 @@ nav a {
   padding-bottom: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+#closeBtn {
+  margin: 10px;
+}
+
+#removeBtn {
+  margin: 10px;
 }
