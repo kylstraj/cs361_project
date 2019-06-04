@@ -2,6 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Modal } from 'react-bootstrap';
 import { monthsByIndex } from '../constants/months';
+import {
+  School,
+  Extracurricular,
+  Finance,
+  Work,
+} from '../constants/eventTypes';
 import { updateEvent } from '../reducers/events/eventsActions';
 
 const mapStateToProps = state => {
@@ -20,8 +26,6 @@ const padWithZeros = (width, num) => {
   }
   return result;
 };
-
-window.padWithZeros = padWithZeros;
 
 const formatTime = ({ hour, minute }) => {
   const halfDayHour = hour % 12 || 12;
@@ -52,6 +56,7 @@ class EventModalComponent extends React.Component {
     this.state = {
       isEditing: false,
       title: props.event.title,
+      type: props.event.type,
       month: props.event.date.month,
       year: props.event.date.year,
       day: props.event.date.day,
@@ -103,6 +108,7 @@ class EventModalComponent extends React.Component {
       this.props.event.id,
       {
         title: this.state.title,
+        type: this.state.type,
         date: {
           month: this.state.month,
           year: `${this.state.year}`,
@@ -152,7 +158,15 @@ class EventModalComponent extends React.Component {
     return (
       <Modal show onHide={close}>
         <Modal.Header>
-          <Modal.Title><input value={this.state.title} onChange={this.makeSetter('title')}/></Modal.Title>
+          <Modal.Title>
+            <input value={this.state.title} onChange={this.makeSetter('title')}/>
+            <select value={this.state.type} onChange={this.makeSetter('type')}>
+              <option value={School}>{School}</option>
+              <option value={Extracurricular}>{Extracurricular}</option>
+              <option value={Finance}>{Finance}</option>
+              <option value={Work}>{Work}</option>
+            </select>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div>
