@@ -59,7 +59,6 @@ const renderWeek = (month, year, week) => {
 
 const weeksInMonth = (month, year) => {
   const { numDays, startsOn } = monthInfo(month, year);
-  console.log(startsOn);
   const daysInFirstWeek = 7 - daysByIndex.indexOf(startsOn);
   return Math.ceil((numDays - daysInFirstWeek) / 7) + 1;
 };
@@ -76,13 +75,15 @@ const MonthGrid = ({
   <div className="month-grid-container">
     <table className="month-grid">
       <thead>
-        <th>Sunday</th>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-        <th>Saturday</th>
+        <tr>
+          <th>Sunday</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+        </tr>
       </thead>
       <tbody>
         {renderGrid(month, year)}

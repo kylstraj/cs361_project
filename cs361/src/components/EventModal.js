@@ -11,7 +11,6 @@ import {
 import { updateEvent } from '../reducers/events/eventsActions';
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     event: state.events.events[state.events.displayedEvent],
   };
@@ -52,7 +51,6 @@ const formatDate = (year, month, day) => {
 class EventModalComponent extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props.event);
     this.state = {
       isEditing: false,
       title: props.event.title,
@@ -94,7 +92,6 @@ class EventModalComponent extends React.Component {
   setDate(e) {
     const dateStr = e.target.value;
     const [yearStr, monthStr, dayStr] = dateStr.split('-');
-    console.log(yearStr, monthStr, dayStr);
     this.setState({
       year: parseInt(yearStr, 10),
       month: monthsByIndex[parseInt(monthStr, 10) - 1],

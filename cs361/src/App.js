@@ -131,6 +131,7 @@ const events = [
 
 class AppComponent extends React.Component {
   componentDidMount() {
+    document.title = 'College Student Helper';
     this.injectEvents(events);
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {monthNumToName, monthNameToNum, getCurMonth, getCurYear, getNextMonth, getNextMonthYear, getPrevMonth, getPrevMonthYear} from '../lib/monthFunctions';
+import { getNextMonth, getNextMonthYear, getPrevMonth, getPrevMonthYear } from '../lib/monthFunctions';
 
 const MonthTitle = ({
   month,

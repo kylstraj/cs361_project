@@ -38,7 +38,7 @@ const MonthComponent = ({
 MonthComponent.propTypes = {
   month: PropTypes.string,
   year: PropTypes.string,
-  displayedEvent: PropTypes.object,
+  displayedEvent: PropTypes.number,
 };
 
 export { MonthComponent };

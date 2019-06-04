@@ -13,16 +13,7 @@ import {
   December,
 } from '../constants/months';
 
-import {
-  Monday,
-  Tuesday,
-  Wednesday,
-  Thursday,
-  Friday,
-  Saturday,
-  Sunday,
-  daysByIndex,
-} from '../constants/daysOfWeek';
+import { daysByIndex } from '../constants/daysOfWeek';
 
 const NUM_DAYS = {
   [January]: 31,

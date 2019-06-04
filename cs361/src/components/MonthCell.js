@@ -61,7 +61,6 @@ const MonthCellComponent = ({
   setDisplayedEvent,
 }) => {
   const eventsOnDate = getEventsOnDate(events, date, month, year);
-  console.log(eventsOnDate);
   return empty ?
     <div /> :
     (
@@ -69,7 +68,12 @@ const MonthCellComponent = ({
         {date}
         <div className="month-cell-scroll">
           {eventsOnDate.map(event => (
-            <Event title={event.title} type={event.type} onClick={() => setDisplayedEvent(event.id)} />
+            <Event
+              key={event.id}
+              title={event.title}
+              type={event.type}
+              onClick={() => setDisplayedEvent(event.id)}
+            />
           ))}
         </div>
       </div>

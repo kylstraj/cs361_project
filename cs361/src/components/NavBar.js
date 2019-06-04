@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {monthNumToName, monthNameToNum, getCurMonth, getCurYear, getNextMonth, getNextMonthYear, getPrevMonth, getPrevMonthYear} from '../lib/monthFunctions';
+import { monthNumToName, getCurMonth, getCurYear } from '../lib/monthFunctions';
 
 const NavBar = () => (
   <nav>
