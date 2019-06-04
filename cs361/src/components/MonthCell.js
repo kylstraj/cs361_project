@@ -40,7 +40,7 @@ const MonthCellComponent = ({
       <div className="month-cell">
         {date}
         { eventsOnDate.map(event => (
-          <Event title={event.title} onClick={() => setDisplayedEvent(event)} />
+          <Event title={event.title} onClick={() => setDisplayedEvent(event.id)} />
         ))}
       </div>
     )

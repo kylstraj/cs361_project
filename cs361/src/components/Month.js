@@ -25,11 +25,10 @@ const MonthComponent = ({
     <MonthGrid month={month} year={year} />
     { displayedEvent &&
       <EventModal
-        event={displayedEvent}
         close={() => setDisplayedEvent(null)}
         remove={() => {
           setDisplayedEvent(null);
-          removeEvent(displayedEvent.id);
+          removeEvent(displayedEvent);
         }}
       />
     }

@@ -10,3 +10,18 @@ export const September = 'September';
 export const October = 'October';
 export const November = 'November';
 export const December = 'December';
+
+export const monthsByIndex = [
+  January,
+  February,
+  March,
+  April,
+  May,
+  June,
+  July,
+  August,
+  September,
+  October,
+  November,
+  December,
+];
