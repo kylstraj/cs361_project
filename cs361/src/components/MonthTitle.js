@@ -7,9 +7,10 @@ const MonthTitle = ({
   month,
   year,
 }) => (
-  <span><Link to={"/month/" + getPrevMonth(month) + "/" + getPrevMonthYear(month,year)}> prev </Link>
+  <div className="d-flex justify-content-center align-items-baseline" >
+    <Link className="mx-3" to={"/month/" + getPrevMonth(month) + "/" + getPrevMonthYear(month,year)}> &lt; prev </Link>
   <h2> {month} {year} </h2>
-  <Link to={"/month/" + getNextMonth(month) + "/" + getNextMonthYear(month,year)}> next </Link></span>
+  <Link className="mx-3" to={"/month/" + getNextMonth(month) + "/" + getNextMonthYear(month,year)}>  next &gt; </Link></div>
 );
 
 MonthTitle.propTypes = {
