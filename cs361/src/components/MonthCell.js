@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { setDisplayedEvent } from '../reducers/events/eventsActions';
+import { typeColors } from '../constants/eventTypes';
 
 const mapStateToProps = state => ({
   events: state.events.events,
@@ -36,9 +37,16 @@ const getEventsOnDate = (events, day, month, year) => Object.values(events)
 
 const Event = ({
   title,
+  type,
   onClick,
 }) => (
-    <div className="event" onClick={onClick}>
+    <div
+      className="event"
+      onClick={onClick}
+      style={{
+        backgroundColor: typeColors[type],
+      }}
+    >
       {title}
     </div>
   );
@@ -59,7 +67,7 @@ const MonthCellComponent = ({
       <div className="month-cell">
         {date}
         {eventsOnDate.map(event => (
-          <Event title={event.title} onClick={() => setDisplayedEvent(event.id)} />
+          <Event title={event.title} type={event.type} onClick={() => setDisplayedEvent(event.id)} />
         ))}
       </div>
     )
