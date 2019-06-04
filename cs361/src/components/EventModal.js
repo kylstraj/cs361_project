@@ -1,7 +1,16 @@
 import React from 'react';
-import moment from 'moment';
+import { connect } from 'react-redux';
 import { Modal } from 'react-bootstrap';
 import { monthsByIndex } from '../constants/months';
+import { updateEvent } from '../reducers/events/eventsActions';
+
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    event: state.events.events[state.events.displayedEvent],
+  };
+}
+const mapDispatchToProps = { updateEvent };
 
 const padWithZeros = (width, num) => {
   const bareNumStr = `${num}`;
@@ -36,9 +45,10 @@ const formatDate = (year, month, day) => {
   return `${yearStr}-${monthStr}-${dayStr}`;
 };
 
-class EventModal extends React.Component {
+class EventModalComponent extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props.event);
     this.state = {
       isEditing: false,
       title: props.event.title,
@@ -53,6 +63,7 @@ class EventModal extends React.Component {
     this.makeSetter = this.makeSetter.bind(this);
     this.makeTimeSetter = this.makeTimeSetter.bind(this);
     this.setDate = this.setDate.bind(this);
+    this.save = this.save.bind(this);
   }
 
   makeSetter(fieldName) {
@@ -84,6 +95,24 @@ class EventModal extends React.Component {
       month: monthsByIndex[parseInt(monthStr, 10) - 1],
       day: parseInt(dayStr, 10),
     });
+  }
+
+  save() {
+    this.setState({ isEditing: false });
+    this.props.updateEvent(
+      this.props.event.id,
+      {
+        title: this.state.title,
+        date: {
+          month: this.state.month,
+          year: `${this.state.year}`,
+          day: this.state.day,
+        },
+        location: this.state.location,
+        startTime: this.state.startTime,
+        endTime: this.state.endTime,
+      },
+    );
   }
 
   render() {
@@ -139,7 +168,7 @@ class EventModal extends React.Component {
           <div>end: <input type="time" value={formatTimeForInput(this.state.endTime)} onChange={this.makeTimeSetter('endTime')}/></div>
         </Modal.Body>
         <Modal.Footer>
-          <button onClick={() => this.setState({ isEditing: false })}>Save</button>
+          <button onClick={this.save}>Save</button>
           <button onClick={close}>Close</button>
           <button onClick={remove}>Remove</button>
         </Modal.Footer>
@@ -148,4 +177,5 @@ class EventModal extends React.Component {
   }
 }
 
-export default EventModal;
+export { EventModalComponent };
+export default connect(mapStateToProps, mapDispatchToProps)(EventModalComponent);
