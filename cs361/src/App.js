@@ -108,25 +108,25 @@ const events = [
       minute: 30,
     },
   },
-  // {
-  //   id: 6,
-  //   type: Finance,
-  //   title: 'Pay credit card',
-  //   location: 'Chicago',
-  //   date: {
-  //     year: '2019',
-  //     month: June,
-  //     day: 2,
-  //   },
-  //   startTime: {
-  //     hour: 9,
-  //     minute: 0,
-  //   },
-  //   endTime: {
-  //     hour: 20,
-  //     minute: 0,
-  //   },
-  // },
+  {
+    id: 6,
+    type: Finance,
+    title: 'Pay credit card',
+    location: 'Chicago',
+    date: {
+      year: '2019',
+      month: June,
+      day: 2,
+    },
+    startTime: {
+      hour: 9,
+      minute: 0,
+    },
+    endTime: {
+      hour: 20,
+      minute: 0,
+    },
+  },
 ];
 
 class AppComponent extends React.Component {

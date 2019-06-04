@@ -45,6 +45,7 @@ const Event = ({
       onClick={onClick}
       style={{
         backgroundColor: typeColors[type],
+        cursor: 'pointer',
       }}
     >
       {title}
@@ -66,9 +67,11 @@ const MonthCellComponent = ({
     (
       <div className="month-cell">
         {date}
-        {eventsOnDate.map(event => (
-          <Event title={event.title} type={event.type} onClick={() => setDisplayedEvent(event.id)} />
-        ))}
+        <div className="month-cell-scroll">
+          {eventsOnDate.map(event => (
+            <Event title={event.title} type={event.type} onClick={() => setDisplayedEvent(event.id)} />
+          ))}
+        </div>
       </div>
     )
 };
